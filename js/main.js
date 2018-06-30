@@ -36,14 +36,14 @@
     $('.contact100-form').on('submit', function(event) {
         console.log("hola");
         event.preventDefault();    
-        var url =  "http://130.211.154.222:5000/stances";
+        var url =  "https://130.211.154.222:5000/stances";
     
         console.log($('.contact100-form').serialize());
         $.post(url, $('.contact100-form').serialize())
             .done(function (data) {
                 console.log("Data: " + data);
                 params = "?headline=" + data.headline + "&body=" + data.body + "&stance=" + data.stance;
-                window.location.replace("http://ailopera.github.io/stanceDetector.github.io/classification.html" + params)
+                window.location.replace("https://ailopera.github.io/stanceDetector.github.io/classification.html" + params)
             });
 
 
