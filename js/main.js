@@ -36,7 +36,7 @@
     $('.contact100-form').on('submit', function(event) {
         console.log("hola");
         event.preventDefault();    
-        var url =  "https://130.211.154.222:5000/stances";
+        var url =  "https://130.211.154.222/stances";
     
         console.log($('.contact100-form').serialize());
         $.post(url, $('.contact100-form').serialize())
