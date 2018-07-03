@@ -72,7 +72,7 @@
 
 	var headline = GetURLParameter('headline');
 	var body = GetURLParameter('body');
-	
+
 
 	var headlineText = document.getElementById("headlineText");
 	headlineText.innerHTML = headline;
@@ -84,13 +84,13 @@
 	// Hacemos una petición al servicio para obtener la posición de la noticia
 
 	var url = "https://130.211.154.222/stances";
-    // $.post(url, $('.contact100-form').serialize())
-        //     .done(function (data) {
-        //         console.log("Data: " + data);
-		// var stanceText = document.getElementsById("stanceText")
-	// stanceText.innerHTML = stance;
-	// var stance = GetURLParameter('stance');
-        //     });
+	$.post(url, $('.contact100-form').serialize())
+		.done(function (data) {
+			console.log("Data: " + data);
+			var stanceText = document.getElementsById("stanceText")
+			stanceText.innerHTML = stance;
+			var stance = GetURLParameter('stance');
+		});
 
 
 </script>
