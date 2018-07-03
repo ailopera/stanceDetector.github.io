@@ -39,7 +39,7 @@
         var url =  "https://130.211.154.222/stances";
     
         console.log($('.contact100-form').serialize());
-        params = "?headline=" + data.headline + "&body=" + data.body;
+        params = "?" + $('.contact100-form').serialize());
         window.location.replace("https://ailopera.github.io/stanceDetector.github.io/classification.html" + params)
         // $.post(url, $('.contact100-form').serialize())
         //     .done(function (data) {
