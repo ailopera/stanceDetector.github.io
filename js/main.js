@@ -39,12 +39,14 @@
         var url =  "https://130.211.154.222/stances";
     
         console.log($('.contact100-form').serialize());
-        $.post(url, $('.contact100-form').serialize())
-            .done(function (data) {
-                console.log("Data: " + data);
-                params = "?headline=" + data.headline + "&body=" + data.body + "&stance=" + data.stance;
-                window.location.replace("https://ailopera.github.io/stanceDetector.github.io/classification.html" + params)
-            });
+        params = "?headline=" + data.headline + "&body=" + data.body;
+        window.location.replace("https://ailopera.github.io/stanceDetector.github.io/classification.html" + params)
+        // $.post(url, $('.contact100-form').serialize())
+        //     .done(function (data) {
+        //         console.log("Data: " + data);
+        //         params = "?headline=" + data.headline + "&body=" + data.body + "&stance=" + data.stance;
+        //         window.location.replace("https://ailopera.github.io/stanceDetector.github.io/classification.html" + params)
+        //     });
 
 
     });

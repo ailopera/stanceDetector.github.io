@@ -33,7 +33,8 @@
 
 <body>
 
-	<header><img src="images/icons/text-lines.png"> Stance Detector </header>
+	<header>
+		<img src="images/icons/text-lines.png"> Stance Detector </header>
 
 
 	<div class="main-section">
@@ -48,7 +49,7 @@
 			</div>
 		</div>
 		<aside class="stance">
-			<p id="stanceText"> STANCE </p>
+			<p id="stanceText"> Obteniendo posición de la noticia...</p>
 		</aside>
 	</div>
 	<!-- <footer>
@@ -57,34 +58,41 @@
 	</footer> -->
 </body>
 <script>
-  function GetURLParameter(sParam)
-    {
-        var sPageURL = window.location.search.substring(1);
-        var sURLVariables = sPageURL.split('&');
-        for (var i = 0; i < sURLVariables.length; i++) 
-        {
-            var sParameterName = sURLVariables[i].split('=');
-            if (sParameterName[0] == sParam) 
-            {
-                return sParameterName[1];
-            }
-        }
-	}​
-	
+	function GetURLParameter(sParam) {
+		var sPageURL = window.location.search.substring(1);
+		var sURLVariables = sPageURL.split('&');
+		for (var i = 0; i < sURLVariables.length; i++) {
+			var sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] == sParam) {
+				return sParameterName[1];
+			}
+		}
+	}
+
 
 	var headline = GetURLParameter('headline');
 	var body = GetURLParameter('body');
-	var stance = GetURLParameter('stance');
+	
 
 	var headlineText = document.getElementById("headlineText");
 	headlineText.innerHTML = headline;
-	
+
 	var bodyText = document.getElementsById("bodyText")
 	bodyText.innerHTML = body;
 
-	var stanceText = document.getElementsById("stanceText")
-	stanceText.innerHTML = stance;
-	
+
+	// Hacemos una petición al servicio para obtener la posición de la noticia
+
+	var url = "https://130.211.154.222/stances";
+    // $.post(url, $('.contact100-form').serialize())
+        //     .done(function (data) {
+        //         console.log("Data: " + data);
+		// var stanceText = document.getElementsById("stanceText")
+	// stanceText.innerHTML = stance;
+	// var stance = GetURLParameter('stance');
+        //     });
+
 
 </script>
+
 </html>
