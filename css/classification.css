@@ -87,3 +87,13 @@ footer {
     text-justify: inter-word;
     padding-left: 30px;
 }
+
+a {
+    text-transform: none;
+    color:#fff;
+}
+
+a :hover{
+    text-transform: none;
+    color:rgba(255, 255, 255, 0.63);
+}

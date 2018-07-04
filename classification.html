@@ -71,19 +71,21 @@
 
 
 	var headline = GetURLParameter('headline');
+	console.log("headline", headline);
+	console.log("Body", body);
 	var body = GetURLParameter('body');
 
 
 	var headlineText = document.getElementById("headlineText");
-	headlineText.innerHTML = headline;
+	headlineText.innerHTML = decodeURIComponent(headline);
 
-	var bodyText = document.getElementsById("bodyText")
-	bodyText.innerHTML = body;
+	var bodyText = document.getElementById("bodyText")
+	bodyText.innerHTML = decodeURIComponent(body);
 
 
 	// Hacemos una petición al servicio para obtener la posición de la noticia
 
-	var url = "https://130.211.154.222/stances";
+	var url = "https://130.211.154.222:6006/stances";
 	$.post(url, $('.contact100-form').serialize())
 		.done(function (data) {
 			console.log("Data: " + data);
