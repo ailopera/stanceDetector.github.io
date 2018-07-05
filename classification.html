@@ -89,8 +89,8 @@
 
 	var url = "https://stancedetectorapp.tk/stances";
 	data = new FormData();
-	data.append( 'headline', headline);
-	data.append( 'body', body);
+	data.append( 'headline', decodeURIComponent(headline));
+	data.append( 'body', decodeURIComponent(body));
 
 	// $.post(url, $('.contact100-form').serialize())
 	// 	.done(function (data) {
@@ -104,9 +104,9 @@
 
     xhr.open( 'POST', url, true );
     xhr.onreadystatechange = function ( response ) {
-			console.log("Data: " + data);
+			console.log("Data: " + response);
 			var stanceText = document.getElementById("stanceText")
-			stanceText.innerHTML = data.stance;
+			stanceText.innerHTML = response.stance;
 	};
     xhr.send( data );
 
