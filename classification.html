@@ -107,7 +107,8 @@
     xhr.open( 'POST', url, true );
     xhr.onreadystatechange = function () {
 			console.log("Respuesta del servidor: " + xhr.responseText);
-			console.log("Data: " + xhr.responseText.stance);
+			console.log("Clase: " + xhr.responseText["stance"]);
+			console.log("Descripcion: " + xhr.responseText["description"]);
 			var stanceText = document.getElementById("stanceText")
 			var stanceDescription = document.getElementById("stanceDescription")
 			stanceText.innerHTML = xhr.responseText["stance"];
