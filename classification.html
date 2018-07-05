@@ -88,14 +88,29 @@
 	// Hacemos una petición al servicio para obtener la posición de la noticia
 
 	var url = "https://stancedetectorapp.tk/stances";
-	$.post(url, $('.contact100-form').serialize())
-		.done(function (data) {
+	data = new FormData();
+	data.append( 'headline', headlineText );
+	data.append( 'body', bodyText );
+
+	// $.post(url, $('.contact100-form').serialize())
+	// 	.done(function (data) {
+	// 		console.log("Data: " + data);
+	// 		var stanceText = document.getElementsById("stanceText")
+	// 		stanceText.innerHTML = stance;
+	// 		var stance = GetURLParameter('stance');
+	// 	});
+	
+	xhr = new XMLHttpRequest();
+
+    xhr.open( 'POST', url, true );
+    xhr.onreadystatechange = function ( response ) {
 			console.log("Data: " + data);
 			var stanceText = document.getElementsById("stanceText")
 			stanceText.innerHTML = stance;
-			var stance = GetURLParameter('stance');
-		});
+	};
+    xhr.send( data );
 
+    e.preventDefault();
 
 </script>
 
