@@ -103,10 +103,10 @@
 	xhr = new XMLHttpRequest();
 
     xhr.open( 'POST', url, true );
-    xhr.onreadystatechange = function ( response ) {
-			console.log("Data: " + response);
+    xhr.onreadystatechange = function () {
+			console.log("Data: " + xhr.responseText);
 			var stanceText = document.getElementById("stanceText")
-			stanceText.innerHTML = response.stance;
+			stanceText.innerHTML = xhr.responseText.stance;
 	};
     xhr.send( data );
 
