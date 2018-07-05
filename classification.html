@@ -52,6 +52,8 @@
 		</div>
 		<aside class="stance">
 			<p id="stanceText"> Obteniendo posición de la noticia...</p>
+			<p id="stanceDescription"> <p>
+			
 		</aside>
 	</div>
 	<!-- <footer>
@@ -104,9 +106,11 @@
 
     xhr.open( 'POST', url, true );
     xhr.onreadystatechange = function () {
-			console.log("Data: " + xhr.responseText);
+			console.log("Data: " + xhr.responseText.stance);
 			var stanceText = document.getElementById("stanceText")
+			var stanceDescription = document.getElementById("stanceDescription")
 			stanceText.innerHTML = xhr.responseText.stance;
+			stanceDescription.innerHTML = xhr.responseText.description;
 	};
     xhr.send( data );
 
