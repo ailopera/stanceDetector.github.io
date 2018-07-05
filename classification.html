@@ -110,8 +110,8 @@
 			console.log("Data: " + xhr.responseText.stance);
 			var stanceText = document.getElementById("stanceText")
 			var stanceDescription = document.getElementById("stanceDescription")
-			stanceText.innerHTML = xhr.responseText.stance;
-			stanceDescription.innerHTML = xhr.responseText.description;
+			stanceText.innerHTML = xhr.responseText["stance"];
+			stanceDescription.innerHTML = xhr.responseText["description"];
 	};
     xhr.send( data );
 
