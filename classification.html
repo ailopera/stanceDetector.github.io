@@ -105,7 +105,7 @@
     xhr.open( 'POST', url, true );
     xhr.onreadystatechange = function ( response ) {
 			console.log("Data: " + data);
-			var stanceText = document.getElementsById("stanceText")
+			var stanceText = document.getElementById("stanceText")
 			stanceText.innerHTML = stance;
 	};
     xhr.send( data );
