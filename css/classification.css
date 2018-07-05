@@ -100,8 +100,15 @@ a:hover{
 }
 
 #stanceText{
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
+    font-family: Montserrat-Black;
+}
+
+#stanceDescription{
+    font-size: 18px;
+    font-family: Montserrat-Black;   
+    color: #0E1614;
 }
 
 
