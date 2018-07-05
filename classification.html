@@ -107,13 +107,14 @@
     xhr.open( 'POST', url, true );
     xhr.onreadystatechange = function () {
 			console.log("Respuesta del servidor: " + xhr.responseText);
-			console.log("Tipo de la respuesta: " + typeof xhr.responseText);
-			console.log("Clase: " + xhr.responseText["stance"]);
-			console.log("Descripcion: " + xhr.responseText["description"]);
+			// console.log("Tipo de la respuesta: " + typeof xhr.responseText);
+			var response = JSON.parse(xhr.responseText)
+			console.log("Clase: " + response["stance"]);
+			console.log("Descripcion: " + response["description"]);
 			var stanceText = document.getElementById("stanceText")
 			var stanceDescription = document.getElementById("stanceDescription")
-			stanceText.innerHTML = xhr.responseText["stance"];
-			stanceDescription.innerHTML = xhr.responseText["description"];
+			stanceText.innerHTML = response["stance"];
+			stanceDescription.innerHTML = response["description"];
 	};
     xhr.send( data );
 
