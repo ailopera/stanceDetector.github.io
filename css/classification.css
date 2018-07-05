@@ -100,6 +100,7 @@ a:hover{
 }
 
 #stanceText{
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -117,4 +118,9 @@ a:hover{
     line-height: 1.7;
     color: #666666;
     margin: 0px;
+  }
+
+  .footer a{
+    text-transform: none;
+    color:rgba(255, 255, 255, 0.63);
   }
